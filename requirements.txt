@@ -11,3 +11,4 @@ streamlit-elements==0.1.0
 streamlit-option-menu==0.3.2
 toml==0.10.2
 tomlkit==0.10.2
+plotly==5.10.0
