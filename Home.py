@@ -1,5 +1,4 @@
 from enum import auto
-from tkinter import PAGES
 import markdown
 import streamlit as st
 import pandas as pd
