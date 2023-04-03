@@ -22,7 +22,7 @@ st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_si
 
 
 
-df = pd.read_csv(r'C:\MLS\csv\SingleFamily6.csv',engine='python',encoding='latin1')
+df = pd.read_csv(r'SingleFamily6.csv',engine='python',encoding='latin1')
 
 
 # Preprocess the data
