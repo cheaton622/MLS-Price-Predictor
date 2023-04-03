@@ -17,17 +17,17 @@ from sklearn.impute import SimpleImputer
 
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='collapsed')
 
-url = "REPLACE-THIS-WITH-THE-URL-OF-THE-CSV-FILE" # Make sure the url is the raw version of the file on GitHub
+url = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/singleFamily6.csv" # Make sure the url is the raw version of the file on GitHub
 download = requests.get(url).content
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
-df = pd.read_csv(io.StringIO(download.decode('utf-8')))
+df = pd.read_csv(io.StringIO(download.decode('latin1')))
 
 
 
 
-df = pd.read_csv(r'SingleFamily6.csv',engine='python',encoding='latin1')
+
 
 
 # Preprocess the data
