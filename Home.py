@@ -1,14 +1,7 @@
-from enum import auto
 import streamlit as st
 import pandas as pd
 import plotly.express as px
-import pandas as pd
 import numpy as np
-from streamlit_option_menu import option_menu
-import streamlit_authenticator as stauth
-import yaml
-import matplotlib.pyplot as plt
-import seaborn as sns
 from scipy import stats
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
