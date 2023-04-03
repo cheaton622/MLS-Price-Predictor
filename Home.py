@@ -1,5 +1,4 @@
 from enum import auto
-import markdown
 import streamlit as st
 import pandas as pd
 import plotly.express as px
