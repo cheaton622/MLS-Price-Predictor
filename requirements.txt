@@ -12,3 +12,4 @@ streamlit-option-menu==0.3.2
 toml==0.10.2
 tomlkit==0.10.2
 plotly==5.10.0
+anyio==3.6.1
