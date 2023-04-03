@@ -14,6 +14,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
+import requests
 
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='collapsed')
 
