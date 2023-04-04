@@ -58,7 +58,7 @@ population = dfpop[['Year', 'Population']]
 df = df.merge(population, left_on='Close_Year', right_on='Year')
 
 # Extract the target and the features
-features = ['BuildingAreaTotal', 'BedroomsTotal', 'BathroomsFull', 'PostalCode','ElemRating','YearBuilt','Income','Population']
+features = ['BuildingAreaTotal', 'BedroomsTotal', 'BathroomsFull','ElemRating','YearBuilt','Income','Population']
 
 X = df[features]
 y = df['AdjustedClosePrice'].values
