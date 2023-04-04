@@ -12,13 +12,18 @@ import requests
 import openpyxl
 
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='collapsed')
-
+# Create the Streamlit app
+st.title("Home Sale Price Predictor")
 url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/Streamlit.csv" # Make sure the url is the raw version of the file on GitHub
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
-df = pd.read_csv(url,engine='python',encoding='latin1')
-
+df1 = pd.read_csv(url,engine='python',encoding='latin1')
+filter = st.selectbox(
+    'Select a Geography to filter:',
+    df1['Geography'].unique()
+)
+df = df1[df1['Geography'] == filter]
 
 
 
@@ -82,8 +87,7 @@ df_pred = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 
 
 
-# Create the Streamlit app
-st.title("Home Sale Price Predictor")
+
 
 # Define the input widgets for the features
 bedrooms = st.slider("Number of Bedrooms", min_value=1, max_value=5, value=3)
