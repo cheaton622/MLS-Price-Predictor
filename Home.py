@@ -37,14 +37,16 @@ df = pd.read_csv(url,engine='python',encoding='latin1', error_bad_lines=False)
 # df = df.loc[(df['Close_Year'] == 2019)]
 
 # Load the income data and merge with the main dataframe
-dfinc = pd.read_csv(r'C:\MLS\csv\ALTUSCMEDHI.csv')
+urlinc = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.csv"
+dfinc = pd.read_csv(urlinc)
 dfinc['Year']=pd.DatetimeIndex(dfinc['DATE']).year
 dfinc['Income']=dfinc['MHIAL01125A052NCEN'].astype(int)
 median_income = dfinc[['Year', 'Income']]
 df = df.merge(median_income, left_on='Close_Year', right_on='Year')
 
 # Load the population data and merge with the main dataframe
-dfpop = pd.read_csv(r'C:\MLS\csv\ALTUSC2POP.csv')
+urlpop = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.csv"
+dfpop = pd.read_csv(urlpop)
 dfpop['Year']=pd.DatetimeIndex(dfpop['DATE']).year
 dfpop['Population']=dfpop['ALTUSC2POP'].astype(int)
 population = dfpop[['Year', 'Population']]
