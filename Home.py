@@ -37,7 +37,7 @@ df = pd.read_csv(url,engine='python',encoding='latin1', error_bad_lines=False)
 # df = df.loc[(df['Close_Year'] == 2019)]
 
 # Load the income data and merge with the main dataframe
-urlinc = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.csv"
+urlinc = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/ALTUSCMEDHI.csv"
 dfinc = pd.read_csv(urlinc)
 dfinc['Year']=pd.DatetimeIndex(dfinc['DATE']).year
 dfinc['Income']=dfinc['MHIAL01125A052NCEN'].astype(int)
