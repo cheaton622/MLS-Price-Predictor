@@ -14,7 +14,7 @@ import openpyxl
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='collapsed')
 # Create the Streamlit app
 st.title("Home Sale Price Predictor")
-url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/Streamlit.csv" # Make sure the url is the raw version of the file on GitHub
+url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/singleFamily6.csv" # Make sure the url is the raw version of the file on GitHub
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
