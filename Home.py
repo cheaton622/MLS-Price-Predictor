@@ -17,7 +17,7 @@ url = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.xls
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
-df = pd.read_excel(url)
+df = pd.read_excel(url,engine='python')
 
 
 
