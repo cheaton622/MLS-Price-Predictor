@@ -37,23 +37,23 @@ df = pd.read_csv(url,engine='python',encoding='latin1', error_bad_lines=False)
 # df = df.loc[(df['Close_Year'] == 2019)]
 
 # Load the income data and merge with the main dataframe
-urlinc = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/ALTUSCMEDHI.csv"
-dfinc = pd.read_csv(urlinc, error_bad_lines=False)
-dfinc['Year']=pd.DatetimeIndex(dfinc['DATE']).year
-dfinc['Income']=dfinc['MHIAL01125A052NCEN'].astype(int)
-median_income = dfinc[['Year', 'Income']]
-df = df.merge(median_income, left_on='Close_Year', right_on='Year')
+# urlinc = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/ALTUSCMEDHI.csv"
+# dfinc = pd.read_csv(urlinc, error_bad_lines=False)
+# dfinc['Year']=pd.DatetimeIndex(dfinc['DATE']).year
+# dfinc['Income']=dfinc['MHIAL01125A052NCEN'].astype(int)
+# median_income = dfinc[['Year', 'Income']]
+# df = df.merge(median_income, left_on='Close_Year', right_on='Year')
 
-# Load the population data and merge with the main dataframe
-urlpop = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/ALTUSC2POP.csv"
-dfpop = pd.read_csv(urlpop, error_bad_lines=False)
-dfpop['Year']=pd.DatetimeIndex(dfpop['DATE']).year
-dfpop['Population']=dfpop['ALTUSC2POP'].astype(int)
-population = dfpop[['Year', 'Population']]
-df = df.merge(population, left_on='Close_Year', right_on='Year')
+# # Load the population data and merge with the main dataframe
+# urlpop = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/ALTUSC2POP.csv"
+# dfpop = pd.read_csv(urlpop, error_bad_lines=False)
+# dfpop['Year']=pd.DatetimeIndex(dfpop['DATE']).year
+# dfpop['Population']=dfpop['ALTUSC2POP'].astype(int)
+# population = dfpop[['Year', 'Population']]
+# df = df.merge(population, left_on='Close_Year', right_on='Year')
 
 # Extract the target and the features
-features = ['BuildingAreaTotal', 'BedroomsTotal', 'BathroomsFull', 'PostalCode','ElemRating','YearBuilt','Income','Population']
+features = ['BuildingAreaTotal', 'BedroomsTotal', 'BathroomsFull', 'PostalCode','ElemRating','YearBuilt']
 
 X = df[features]
 y = df['AdjustedClosePrice'].values
@@ -100,9 +100,7 @@ input_data = {
     'BathroomsFull': [bathrooms],
     'PostalCode': [postal_code],
     'ElemRating': [elem_rating],
-    'YearBuilt': [year_built],
-    'Income': [median_income[median_income['Year'] == 2021]['Income'].iloc[0]],
-    'Population': [population[population['Year'] == 2021]['Population'].iloc[0]]
+    'YearBuilt': [year_built]
 }
 
 # Create a dataframe from the input data
