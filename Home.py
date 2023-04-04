@@ -61,7 +61,7 @@ df = df.merge(population, left_on='Close_Year', right_on='Year')
 features = ['BuildingAreaTotal', 'BedroomsTotal', 'BathroomsFull','ElemRating','YearBuilt','Income','Population']
 
 X = df[features]
-y = df['AdjustedClosePrice'].values
+y = df['ClosePrice'].values
 
 # Remove outliers using the Z-score method
 # z = np.abs(stats.zscore(df[features]))
