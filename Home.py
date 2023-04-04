@@ -13,7 +13,7 @@ import requests
 
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='collapsed')
 
-url = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/singleFamily6.csv" # Make sure the url is the raw version of the file on GitHub
+url = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.csv" # Make sure the url is the raw version of the file on GitHub
 download = requests.get(url).content
 
 # Reading the downloaded content and turning it into a pandas dataframe
