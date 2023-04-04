@@ -17,7 +17,7 @@ url = "https://github.com/cheaton622/MLS-Price-Predictor/blob/main/Streamlit.csv
 
 # Reading the downloaded content and turning it into a pandas dataframe
 
-df = pd.read_csv(url,engine='python',encoding='latin1',low_memory=False)
+df = pd.read_csv(url,engine='python',encoding='latin1')
 
 
 
