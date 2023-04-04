@@ -110,7 +110,7 @@ input_df = pd.DataFrame(input_data)
 
 # Make the prediction
 prediction = regressor.predict(input_df)[0]
-
+st.title("Results")
 # Display the prediction
 st.write("The predicted sale price is $", round(prediction, 2))
 
