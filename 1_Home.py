@@ -179,9 +179,9 @@ with st.empty():
         # Add shaded region between horizontal lines
         fig2.add_shape(
             type='rect',
-            x0=100000, y0=-20000, x1=600000, y1=20000,
+            x0=100000, y0=-25000, x1=600000, y1=25000,
             line=dict(width=5),
-            fillcolor='rgba(0,100,80,0.2)',
+            fillcolor='rgba(15, 245, 60, 0.68)',
             opacity=0.2
         )
 
