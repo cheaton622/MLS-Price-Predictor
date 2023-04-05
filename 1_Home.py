@@ -22,7 +22,7 @@ url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/Str
 df1 = pd.read_csv(url,engine='python',encoding='latin1')
 filter = st.selectbox(
     'Select a Geography to filter:',
-    df1['Geography'].unique()
+    sorted(df1['Geography'].unique())
 )
 df = df1[df1['Geography'] == filter]
 
