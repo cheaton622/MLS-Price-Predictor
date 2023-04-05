@@ -10,7 +10,7 @@ from sklearn.metrics import mean_squared_error
 from sklearn.impute import SimpleImputer
 import requests
 import openpyxl
-from 2_Elementary_Schools import 2_Elementary_Schools
+
 
 st.set_page_config(page_title="MLS",page_icon="🏚️",layout='wide',initial_sidebar_state='expanded')
 # Create the Streamlit app
