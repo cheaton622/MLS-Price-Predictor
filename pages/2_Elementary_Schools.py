@@ -13,8 +13,8 @@ import plotly.graph_objects as go
 st.set_page_config(page_title="Elementary Schools",page_icon="🔧",layout='wide',initial_sidebar_state='collapsed')
 
 st.title("Elementary Schools")
-
-dfBefore = pd.read_csv(r'C:\MLS\csv\SingleFamily3.csv',engine='python',encoding='latin1')
+url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/Streamlit.csv"
+dfBefore = pd.read_csv(url,engine='python',encoding='latin1')
 
 # Selecting multiple schools
 filters = st.sidebar.multiselect(
