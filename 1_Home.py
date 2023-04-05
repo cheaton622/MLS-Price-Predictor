@@ -153,4 +153,17 @@ with st.empty():
             title='Actual vs Predicted Prices'
         )
         st.plotly_chart(fig1, use_container_width=True)
+        
+        
+         # Calculate the residuals
+        residuals = y_test - y_pred
+
+        # Create a scatter plot with Plotly
+        fig2 = px.scatter(x=y_pred, y=residuals)
+        fig2.update_layout(
+            xaxis_title='Predicted Prices',
+            yaxis_title='Residuals',
+            title='Residual Plot'
+        )
+        st.plotly_chart(fig2, use_container_width=True)
 st.caption("""Version 1.0.0""")
