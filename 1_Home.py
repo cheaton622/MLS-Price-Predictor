@@ -25,7 +25,7 @@ filter = st.selectbox(
     sorted(df1['Geography'].unique())
 )
 df = df1[df1['Geography'] == filter]
-
+ElementarySchool = ', '.join(str(ElemRating) for ElemRating in sorted(df['ElemRating'].unique()))
 
 
 
@@ -96,6 +96,7 @@ bathrooms = st.slider("Number of Bathrooms", min_value=1.0, max_value=5.0,step=0
 building_area = st.slider("Building Area (square feet)", min_value=500, max_value=10000,step=250, value=2000)
 # postal_code = st.text_input("Postal Code", value='35226')
 elem_rating = st.slider("Elementary School Rating (1-10)", min_value=1, max_value=10, value=7)
+st.write('Elementary Ratings in the Area: '.format(filter), ElementarySchool)
 year_built = st.slider("Year Built", min_value=1900, max_value=2022, value=2000)
 
 # Define a dictionary to hold the input values
