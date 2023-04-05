@@ -133,15 +133,23 @@ with st.empty():
         X = df[features]
 
         # Calculate the correlation matrix
-        corr = X.corr().sort_values(by='ClosePrice', ascending=False)
+        corr = X.corr()
+
+        # Sort the columns based on correlation with ClosePrice
+        corr_sorted = corr.sort_values(by='ClosePrice', ascending=False)
+
+        # Convert the DataFrame back to a numpy array
+        corr_array = np.array(corr_sorted)
 
         # Create the heatmap
-        fig = px.imshow(corr, color_continuous_scale='rdylbu')
+        fig = px.imshow(corr_array, color_continuous_scale='rdylbu')
 
         # Set the labels for the x and y axes
-        fig.update_xaxes(side='bottom', tickangle=90, tickvals=np.arange(len(features)), ticktext=features)
-        fig.update_yaxes(tickvals=np.arange(len(features)), ticktext=features)
-        fig.update_layout(margin=dict(l=0, r=0, t=0, b=0))
+        fig.update_xaxes(side='bottom', tickangle=90, tickvals=np.arange(len(features)), ticktext=corr_sorted.columns)
+        fig.update_yaxes(tickvals=np.arange(len(features)), ticktext=corr_sorted.index)
+
+        # Set the size of the plot
+        fig.update_layout(width=600, height=600)
 
         # Show the plot in Streamlit
         st.plotly_chart(fig, use_container_width=True)
