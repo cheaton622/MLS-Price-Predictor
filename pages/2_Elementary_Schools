@@ -15,3 +15,6 @@ from io import StringIO
 
 
 st.set_page_config(page_title="Elementary Schools",page_icon="🔧",layout='wide',initial_sidebar_state='collapsed')
+
+
+st.title("Elementary Schools")
