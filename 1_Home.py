@@ -122,5 +122,35 @@ st.write("The predicted sale price is $", round(prediction, 2))
 st.write("The RMSE is $", round(rmse, 2))
 
 st.write("------------------------------------------------------------------------------------------------------------------------")
+with st.empty():
+    col1, col2 = st.columns(2)
+    with col1:
+        st.write("The correlation between the features and the target variable is shown below.")
+    
+        # Extract the features
+        features = ['ClosePrice','BuildingAreaTotal', 'BathroomsFull','ElemRating', 'BedroomsTotal','YearBuilt']
+        X = df[features]
 
+        # Calculate the correlation matrix
+        corr = X.corr().sort_values(by='ClosePrice', ascending=False)
+
+        # Create the heatmap
+        fig = px.imshow(corr, color_continuous_scale='rdylbu')
+
+        # Set the labels for the x and y axes
+        fig.update_xaxes(side='bottom', tickangle=90, tickvals=np.arange(len(features)), ticktext=features)
+        fig.update_yaxes(tickvals=np.arange(len(features)), ticktext=features)
+        fig.update_layout(margin=dict(l=0, r=0, t=0, b=0))
+
+        # Show the plot in Streamlit
+        st.plotly_chart(fig, use_container_width=True)
+
+    with col2:
+        fig1 = px.scatter(x=y_test, y=y_pred)
+        fig1.update_layout(
+            xaxis_title='Actual Prices',
+            yaxis_title='Predicted Prices',
+            title='Actual vs Predicted Prices'
+        )
+        st.plotly_chart(fig1, use_container_width=True)
 st.caption("""Version 1.0.0""")
