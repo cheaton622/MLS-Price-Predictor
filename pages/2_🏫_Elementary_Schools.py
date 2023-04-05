@@ -10,7 +10,7 @@ from sklearn.impute import SimpleImputer
 from io import StringIO
 import plotly.graph_objects as go
 
-st.set_page_config(page_title="Elementary Schools",page_icon="🔧",layout='wide',initial_sidebar_state='collapsed')
+st.set_page_config(page_title="Elementary Schools",page_icon="🏫",layout='wide',initial_sidebar_state='collapsed')
 
 st.title("Elementary Schools")
 url = "https://raw.githubusercontent.com/cheaton622/MLS-Price-Predictor/main/Streamlit.csv"
