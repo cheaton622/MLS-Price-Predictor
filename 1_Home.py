@@ -93,7 +93,7 @@ df_pred = pd.DataFrame({'Actual': y_test, 'Predicted': y_pred})
 # Define the input widgets for the features
 bedrooms = st.slider("Number of Bedrooms", min_value=1, max_value=5, value=3)
 bathrooms = st.slider("Number of Bathrooms", min_value=1.0, max_value=5.0,step=0.5, value=2.0)
-building_area = st.slider("Building Area (square feet)", min_value=500, max_value=10000,step=250, value=2000)
+building_area = st.slider("Building Area (square feet)", min_value=500, max_value=10000,step=250, value=1500)
 # postal_code = st.text_input("Postal Code", value='35226')
 elem_rating = st.slider("Elementary School Rating (1-10)", min_value=1, max_value=10, value=7)
 st.write('Elementary Ratings in the Area: '.format(filter), ElementarySchool)
