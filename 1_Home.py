@@ -184,6 +184,39 @@ with st.empty():
             fillcolor='rgba(15, 245, 60, 0.68)',
             opacity=0.2
         )
+        # Add shaded region between horizontal lines
+        fig2.add_shape(
+            type='rect',
+            x0=100000, y0=-25000, x1=600000, y1=-50000,
+            line=dict(width=5),
+            fillcolor='rgba(242, 245, 15, 1.0)',
+            opacity=0.2
+        )
+         # Add shaded region between horizontal lines
+        fig2.add_shape(
+            type='rect',
+            x0=100000, y0=25000, x1=600000, y1=50000,
+            line=dict(width=5),
+            fillcolor='rgba(242, 245, 15, 1.0)',
+            opacity=0.2
+        )       
+        # Add shaded region between horizontal lines
+        fig2.add_shape(
+            type='rect',
+            x0=100000, y0=-50000, x1=600000, y1=-100000,
+            line=dict(width=5),
+            fillcolor='rgba(245, 15, 27, 0.88)',
+            opacity=0.2
+        )
+         # Add shaded region between horizontal lines
+        fig2.add_shape(
+            type='rect',
+            x0=100000, y0=50000, x1=600000, y1=100000,
+            line=dict(width=5),
+            fillcolor='rgba(245, 15, 27, 0.88)',
+            opacity=0.2
+        )       
+        st.plotly_chart(fig2, use_container_width=True)
 
         st.plotly_chart(fig2, use_container_width=True)
 st.caption("""Version 1.0.0""")
