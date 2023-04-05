@@ -34,7 +34,7 @@ df = df1[df1['Geography'] == filter]
 # Preprocess the data
 # df = df.loc[(df["Geography"] != 'Downtown') & (df["Geography"] != 'North of River') & (df["Geography"] != 'University')]
 # df = df.loc[(df['PropertySubType'] != 'Townhouse')]
-# df=df.loc[(df["ClosePrice"] > 100000) & (df["ClosePrice"] < 600000)]
+df=df.loc[(df["ClosePrice"] > 100000) & (df["ClosePrice"] < 600000)]
 # df = df.loc[(df["BuildingAreaTotal"] > 0)]
 # df = df.loc[(df["BedroomsTotal"] > 0)]
 # df = df.loc[(df["BathroomsFull"] > 0)]
