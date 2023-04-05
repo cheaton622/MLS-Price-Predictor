@@ -175,5 +175,15 @@ with st.empty():
             yaxis_title='Residuals',
             title='Residual Plot'
         )
+
+        # Add shaded region between horizontal lines
+        fig2.add_shape(
+            type='rect',
+            x0=100000, y0=-20000, x1=600000, y1=20000,
+            line=dict(width=5),
+            fillcolor='rgba(0,100,80,0.2)',
+            opacity=0.2
+        )
+
         st.plotly_chart(fig2, use_container_width=True)
 st.caption("""Version 1.0.0""")
