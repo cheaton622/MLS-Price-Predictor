@@ -123,6 +123,7 @@ st.write("The predicted sale price is $", round(prediction, 2))
 st.write("The RMSE is $", round(rmse, 2))
 
 st.write("------------------------------------------------------------------------------------------------------------------------")
+st.title("Features Explained")
 with st.empty():
     col1, col2 = st.columns(2)
     with col1:
